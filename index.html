@@ -1,38 +1,23 @@
-body {
-    font-family: sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クイズアプリ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-#quiz-container {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    text-align: center;
-}
+    <div id="quiz-container">
+        <h2 id="question">問題：日本の首都は？</h2>
+        <div id="answers">
+            <button class="answer-btn">東京</button>
+            <button class="answer-btn">大阪</button>
+            <button class="answer-btn">京都</button>
+        </div>
+        <p id="result"></p>
+    </div>
 
-.answer-btn {
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    margin-top: 0.5rem;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-    font-size: 1rem;
-}
-
-.answer-btn:hover {
-    background-color: #e0e0e0;
-}
-
-#result {
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
+    <script src="script.js"></script>
+</body>
+</html>
