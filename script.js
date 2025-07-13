@@ -1,38 +1,22 @@
-body {
-    font-family: sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-}
+// HTMLの要素を取得
+const resultElement = document.getElementById('result');
+const answerButtons = document.querySelectorAll('.answer-btn');
 
-#quiz-container {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    text-align: center;
-}
+// 正解の答え
+const correctAnswer = '東京';
 
-.answer-btn {
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    margin-top: 0.5rem;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-    font-size: 1rem;
-}
+// ボタンがクリックされたときの処理
+answerButtons.forEach(button => {
+    button.addEventListener('click', (event) => {
+        const selectedAnswer = event.target.textContent;
 
-.answer-btn:hover {
-    background-color: #e0e0e0;
-}
-
-#result {
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
+        // 答え合わせ
+        if (selectedAnswer === correctAnswer) {
+            resultElement.textContent = '正解！🎉';
+            resultElement.style.color = 'green';
+        } else {
+            resultElement.textContent = '残念！不正解です。';
+            resultElement.style.color = 'red';
+        }
+    });
+});
